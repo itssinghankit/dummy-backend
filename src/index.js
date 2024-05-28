@@ -1,5 +1,5 @@
 import express from "express";
-import brcypt from "bcryptjs"
+import bcrypt from "bcryptjs"
 
 const app = express();
 app.use(express.json());
@@ -9,7 +9,15 @@ app.get("/", (req, res) => {
 });
 
 app.get("/check", (req, res) => {
-    res.json({ message: "Welcome to check route" })
+    
+    const password = "password";
+    const hashed = bcrypt.hash(password,10);
+    const isMatch = bcrypt.compare(hashed,password);
+
+    res.status(200).json({
+        hashed:hashed,
+        isMatch:isMatch
+    })
 
 })
 
