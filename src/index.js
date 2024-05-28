@@ -8,11 +8,11 @@ app.get("/", (req, res) => {
     res.send("Hello World");
 });
 
-app.get("/check", (req, res) => {
+app.get("/check", async(req, res) => {
     
     const password = "password";
-    const hashed = bcrypt.hash(password,10);
-    const isMatch = bcrypt.compare(hashed,password);
+    const hashed = await bcrypt.hash(password,10);
+    const isMatch = await bcrypt.compare(hashed,password);
 
     res.status(200).json({
         hashed:hashed,
