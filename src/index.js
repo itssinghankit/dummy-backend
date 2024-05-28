@@ -1,4 +1,5 @@
 import express from "express";
+import brcypt from "bcryptjs"
 
 const app = express();
 app.use(express.json());
