@@ -12,6 +12,12 @@ app.get("/check", (req, res) => {
 
 })
 
+app.get("/run", (req, res) => {
+    res.status(200).json({
+        message:"working fine"
+    })
+})
+
 app.listen(3000, () => {
     console.log("server started at port 3000")
 });
