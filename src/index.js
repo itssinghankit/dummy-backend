@@ -12,7 +12,7 @@ app.get("/check", async(req, res) => {
     
     const password = "password";
     const hashed = await bcrypt.hash(password,10);
-    const isMatch = await bcrypt.compare(hashed,password);
+    const isMatch = await bcrypt.compare(password,hashed);
 
     res.status(200).json({
         hashed:hashed,
