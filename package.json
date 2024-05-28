@@ -2,11 +2,11 @@
   "name": "dummy-project",
   "version": "1.0.0",
   "description": "dummy project",
-  "main": "app.js",
+  "main": "index.js",
   "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "node app.js"
+    "dev": "node index.js"
   },
   "author": "ankit",
   "license": "ISC",
